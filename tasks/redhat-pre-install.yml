@@ -14,7 +14,9 @@
     mode: 0644
     owner: root
     group: root
-  when: nvidia_docker_add_repo
+  when: 
+    - nvidia_docker_add_repo
+    - airgap is defined and airgap == True
 
 - name: install packages
   yum:
