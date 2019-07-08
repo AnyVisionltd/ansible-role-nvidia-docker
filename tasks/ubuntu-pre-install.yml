@@ -14,7 +14,7 @@
     state: present
   when: 
     - nvidia_docker_add_repo
-    - airgap is defined and airgap == True
+    - airgap is not defined or airgap != True
   
 
 - name: add repo
@@ -26,7 +26,7 @@
     group: root
   when: 
     - nvidia_docker_add_repo
-    - airgap is defined and airgap == True
+    - airgap is not defined or airgap != True
 
 - name: install packages
   apt:
