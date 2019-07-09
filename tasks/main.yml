@@ -31,3 +31,4 @@
     mode: 0755
     owner: root
     group: root
+  when: airgap is not defined or airgap != True
